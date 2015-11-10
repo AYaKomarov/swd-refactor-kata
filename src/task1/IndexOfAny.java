@@ -1,5 +1,10 @@
 package task1;
 
+/**
+ * Писал тесты к оригинальной логике:
+ * Выдает индекс для совпадающего символа если следующий символ в массиве тоже совпадает со следующим символом в строке
+ *
+ */
 public class IndexOfAny {
   /**
    * Write covering tests + refactor code.
@@ -17,20 +22,17 @@ public class IndexOfAny {
 
         for(int j = 0; j < searchLen; ++j) {
           if(searchChars[j] == ch) {
-            if(i >= csLast || j >= searchLast) {
+            if(i == csLast || j == searchLast) {
               return i;
             }
-
             if(searchChars[j + 1] == str.charAt(i + 1)) {
               return i;
             }
           }
         }
       }
-
-      return -1;
-    } else {
-      return -1;
     }
+
+    return -1;
   }
 }
